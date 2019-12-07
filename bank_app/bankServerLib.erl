@@ -17,7 +17,8 @@ check_exist_user([], Id) ->
     0.
 
 put_money(Id, Money) ->
-    ets:insert(store, {Id, check_balance(Id) + Money}).
+    ets:insert(store, {Id, check_balance(Id) + Money}),
+    'Done'.
 
 transfer_money(Id_Src, Id_Dest, Money) ->
     Balance = check_balance(Id_Src),
