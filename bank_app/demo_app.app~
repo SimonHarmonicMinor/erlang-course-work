@@ -1,9 +1,0 @@
-{application, demo_app,
-[{description, "some kind of lab"},
-{vsn, "1.0"},
-{modules, [demo_app, general_svisor,
- demo_client]}, 
- {registered, [ demo_client, general_svisor]},
- {applications, [kernel, stdlib]},
- {mod, {demo_app,[]}},
- {start_phases, []}]}.
