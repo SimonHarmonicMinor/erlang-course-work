@@ -22,9 +22,9 @@
          
             <Button fx:id="btn_mainTab" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0" stylesheets="@styling.css">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/icons8_Settings_48px.png" />
+                        <Image url="@../icons/MainTab.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -32,9 +32,9 @@
             
             <Button fx:id="btn_transferTab" mnemonicParsing="false" prefHeight="75.0" prefWidth="105.0" stylesheets="@styling.css">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/icons8_Attach_52px.png" />
+                        <Image url="@../icons/TransferTab.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -42,9 +42,9 @@
             
             <Button fx:id="btn_operationsTab" mnemonicParsing="false" prefHeight="77.0" prefWidth="104.0" stylesheets="@styling.css">
                <graphic>
-                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../icons/icons8_Sleep_48px.png" />
+                        <Image url="@../icons/OperationsTab.png" />
                      </image>
                   </ImageView>
                </graphic>
