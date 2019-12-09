@@ -18,7 +18,43 @@
 <AnchorPane id="AnchorPane" prefHeight="743.0" prefWidth="1294.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.151" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MoneyTransferController">
    <children>
       
-      <AnchorPane layoutX="75.0" layoutY="135.0" prefHeight="608.0" prefWidth="1219.0" style="-fx-background-color: #EDF2F6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="135.0">
+      <VBox layoutX="-7.0" layoutY="132.0" prefHeight="653.0" prefWidth="92.0" AnchorPane.bottomAnchor="3.0" AnchorPane.topAnchor="132.0">
+         <children>
+         
+            <Button fx:id="btn_mainTab" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0" stylesheets="@styling.css">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/MainTab.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            
+            <Button fx:id="btn_transferTab" mnemonicParsing="false" prefHeight="75.0" prefWidth="105.0" stylesheets="@stylingbtn.css">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/TransferTab.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            
+            <Button fx:id="btn_operationsTab" mnemonicParsing="false" prefHeight="77.0" prefWidth="104.0" stylesheets="@styling.css">
+               <graphic>
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../icons/OperationsTab.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+            
+         </children>
+      </VBox>
+      
+      <AnchorPane layoutX="75.0" layoutY="135.0" prefHeight="608.0" prefWidth="1219.0" style="-fx-background-color: #EDF2F6;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="75.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="135.0">
          <children>
             
             <Pane layoutX="-3.0" prefHeight="135.0" prefWidth="1152.0" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="0.0">

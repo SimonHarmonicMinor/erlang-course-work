@@ -25,14 +25,15 @@ import javafx.stage.Modality;
 
 public class HomeController implements Initializable {
     
-	private static float _balance;		// Баланс счета
-	private static int _ID;				// Идентификатор клиента
-	private static int _account;		// Счет (номер карты) клиента
-	private float _USD;					// Курс доллара
-	private float _EUR;					// Курс евро
+	private static float _balance;					// Баланс счета
+	private static int _ID;							// Идентификатор клиента
+	private static int _account;					// Счет (номер карты) клиента
+	private static float _USD;						// Курс доллара
+	private static float _EUR;						// Курс евро
 	
-	private static float _coming;		// Приход
-	private static float _consuption;	// Расход
+	private static float _coming;					// Приход
+	private static float _consuption;				// Расход
+	private static boolean _flagRefresh = false;	// Флаг обновления формы 
 	
     @FXML
     private Label label;
@@ -80,6 +81,7 @@ public class HomeController implements Initializable {
                 Stage stage = new Stage();
                 try {
 					FXMLDocumentController(stage, "MoneyTransfer.fxml");
+					CloseWindowSimple();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -94,6 +96,7 @@ public class HomeController implements Initializable {
                 Stage stage = new Stage();
                 try {
 					FXMLDocumentController(stage, "MoneyOperations.fxml");
+					CloseWindowSimple();
 				} catch (IOException e) {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
@@ -101,14 +104,33 @@ public class HomeController implements Initializable {
             }
         });
         
-        DefaultClientInformation();
-        SubClientInformation();
+        if (!_flagRefresh)
+        {   
+        	DefaultClientInformation();
+        	SubClientInformation();
+        }
+        
         DrawClientInformation();
         
         plotBarChart();
         plotChart();
+        
+        _flagRefresh = true;
+        
+        /*DefaultClientInformation();
+        SubClientInformation();
+        DrawClientInformation();
+        
+        plotBarChart();
+        plotChart();*/
     }
     
+    private void CloseWindowSimple() 
+    {
+    	Stage stage = (Stage) btn_mainTab.getScene().getWindow();
+    	stage.close();
+    }
+
     // Открытие нового окна
     protected void FXMLDocumentController(Stage stage, String formName) throws IOException 
     {
@@ -161,13 +183,13 @@ public class HomeController implements Initializable {
     }
     
     // Установить курс доллара
-    public void SetUSD(float newUSD)
+    public static void SetUSD(float newUSD)
     {
     	_USD = newUSD;
     }
 
     // Установить курс евро
-    public void SetEUR(float newEUR)
+    public static void SetEUR(float newEUR)
     {
     	_EUR = newEUR;
     }

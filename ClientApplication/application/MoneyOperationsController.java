@@ -1,16 +1,20 @@
 package application;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.Optional;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.Label;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.event.EventHandler;
@@ -34,10 +38,49 @@ public class MoneyOperationsController implements Initializable {
     private Button btn_cancel;
     
     @FXML
+    private Button btn_mainTab;
+
+    @FXML
+    private Button btn_transferTab;
+    
+    @FXML
+    private Button btn_operationsTab;
+    
+    @FXML
     private TextField txt_transferSumm;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
+
+        btn_mainTab.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage = new Stage();
+                try {
+					FXMLDocumentController(stage, "Home.fxml");
+					CloseWindowSimple();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
+
+        btn_transferTab.setOnAction(new EventHandler<ActionEvent>() {
+            
+            @Override
+            public void handle(ActionEvent event) {
+                Stage stage = new Stage();
+                try {
+					FXMLDocumentController(stage, "MoneyTransfer.fxml");
+					CloseWindowSimple();
+				} catch (IOException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+            }
+        });
         
         btn_take.setOnAction(new EventHandler<ActionEvent>() {
             
@@ -51,7 +94,7 @@ public class MoneyOperationsController implements Initializable {
             
             @Override
             public void handle(ActionEvent event) {
-            	TakeSumm();
+            	PutSumm();
             }
         });
         
@@ -131,8 +174,22 @@ public class MoneyOperationsController implements Initializable {
     	return str == null || str.trim().length() == 0;
     }
     
+    private void CloseWindowSimple() 
+    {
+    	Stage stage = (Stage) btn_take.getScene().getWindow();
+    	stage.close();
+    }
+
     private void CloseWindow() 
     {
+    	Stage stageNew = new Stage();
+        try {
+			FXMLDocumentController(stageNew, "Home.fxml");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+    	
     	Stage stage = (Stage) btn_take.getScene().getWindow();
     	stage.close();
     }
@@ -168,5 +225,14 @@ public class MoneyOperationsController implements Initializable {
         alert.setContentText("None available!");
  
         alert.showAndWait();
+    }
+
+    // Открытие нового окна
+    protected void FXMLDocumentController(Stage stage, String formName) throws IOException 
+    {
+        Parent root = FXMLLoader.load(getClass().getResource(formName));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }
