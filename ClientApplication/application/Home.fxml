@@ -20,7 +20,7 @@
       <VBox layoutX="-7.0" layoutY="132.0" prefHeight="653.0" prefWidth="92.0" AnchorPane.bottomAnchor="3.0" AnchorPane.topAnchor="132.0">
          <children>
          
-            <Button fx:id="btn_mainTab" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0" stylesheets="@styling.css">
+            <Button fx:id="btn_mainTab" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0" stylesheets="@stylingbtn.css">
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -63,7 +63,22 @@
                         <Font name="Segoe UI Bold" size="12.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl_FIO" layoutX="94.0" layoutY="36.0" text="Some information here..?" textFill="#9a9a9a">
+                  <Label layoutX="94.0" layoutY="56.0" text="PERSONAL ID: " textFill="#9a9a9a">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_ID" layoutX="180.0" layoutY="56.0" text="99" textFill="#9a9a9a">
+                     <font>
+                        <Font name="Segoe UI" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="94.0" layoutY="91.0" text="PERSONAL ACCOUNT NUMBER: " textFill="#9a9a9a">
+                     <font>
+                        <Font name="Segoe UI Bold" size="12.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl_accountNumber" layoutX="94.0" layoutY="110.0" text="2233 0344 3423 2299" textFill="#9a9a9a">
                      <font>
                         <Font name="Segoe UI" size="12.0" />
                      </font>

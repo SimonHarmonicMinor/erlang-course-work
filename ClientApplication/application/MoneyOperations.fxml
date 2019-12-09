@@ -88,13 +88,13 @@
             <Pane layoutX="470.0" layoutY="350.0" prefHeight="92.0" prefWidth="350.0">
 				<children>
 				
-				   <Button fx:id="btn_take" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0" stylesheets="@styling.css" text="WITHDRAW" textFill="#9a9a9a">
+				   <Button fx:id="btn_take" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0" stylesheets="@stylingwordbtn.css" text="WITHDRAW" textFill="#9a9a9a">
 				   </Button>
 				   
-				   <Button fx:id="btn_put" layoutX="140.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0" stylesheets="@styling.css" text="REPLENISH" textFill="#9a9a9a">
+				   <Button fx:id="btn_put" layoutX="140.0" mnemonicParsing="false" prefHeight="76.0" prefWidth="91.0" stylesheets="@stylingwordbtn.css" text="REPLENISH" textFill="#9a9a9a">
 				   </Button>
 				   
-				   <Button fx:id="btn_cancel" layoutX="280.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="105.0" stylesheets="@styling.css" text="CANCEL" textFill="#9a9a9a">
+				   <Button fx:id="btn_cancel" layoutX="280.0" mnemonicParsing="false" prefHeight="75.0" prefWidth="105.0" stylesheets="@stylingwordbtn.css" text="CANCEL" textFill="#9a9a9a">
 				   </Button>
 				   
 				</children>

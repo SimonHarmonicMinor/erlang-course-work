@@ -26,6 +26,8 @@ import javafx.stage.Modality;
 public class HomeController implements Initializable {
     
 	private static float _balance;		// Баланс счета
+	private static int _ID;				// Идентификатор клиента
+	private static int _account;		// Счет (номер карты) клиента
 	private float _USD;					// Курс доллара
 	private float _EUR;					// Курс евро
 	
@@ -46,9 +48,12 @@ public class HomeController implements Initializable {
     
     @FXML
     private Label lbl_consuption;
-    
-    //@FXML
-    //private VBox pnl_scroll;
+
+    @FXML
+    private Label lbl_ID;
+
+    @FXML
+    private Label lbl_accountNumber;
      
     @FXML
     private BarChart bar_chart;
@@ -65,14 +70,8 @@ public class HomeController implements Initializable {
     @FXML
     private Button btn_operationsTab;
     
-    @FXML
-    private void handleButtonAction(ActionEvent event) {
-       
-    }
-    
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
 
         btn_transferTab.setOnAction(new EventHandler<ActionEvent>() {
             
@@ -129,6 +128,8 @@ public class HomeController implements Initializable {
     // Дефолтные данные клиента (для тестирования GUI)
     private void DefaultClientInformation()
     {
+    	SetID(99);
+    	SetAccount(63453421);
     	SetBalance(999.00f);
     	SetUSD(63.67f);
     	SetEUR(70.41f);
@@ -170,10 +171,24 @@ public class HomeController implements Initializable {
     {
     	_EUR = newEUR;
     }
+
+    // Установить идентификатор клиента
+    public static void SetID(int newID)
+    {
+    	_ID = newID;
+    }
+
+    // Установить номер счета клиента
+    public static void SetAccount(int newAccount)
+    {
+    	_account = newAccount;
+    }
     
     // Отобразить данные клиента
     private void DrawClientInformation()
     {
+    	lbl_ID.setText(Integer.toString(_ID));
+    	lbl_accountNumber.setText(Integer.toString(_account));
     	lbl_balance.setText(Float.toString(_balance));
     	lbl_consuption.setText(Float.toString(_consuption));
     	lbl_USD.setText(Float.toString(_USD));
