@@ -62,16 +62,9 @@ init([]) ->
 	       type => worker,
 	       modules => [bank_server]},
 
-    BChild = #{id => loger,
-	       start => {logger, start_link, []},
-	       restart => permanent,
-	       shutdown => 5000,
-	       type => worker,
-	       modules => [logger]},
 
 
-
-    {ok, {SupFlags, [AChild, BChild]}}.
+    {ok, {SupFlags, [AChild]}}.
 
 %%%===================================================================
 %%% Internal functions

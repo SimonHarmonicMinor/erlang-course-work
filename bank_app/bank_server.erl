@@ -70,19 +70,19 @@ init([]) ->
 %% @end
 %%--------------------------------------------------------------------
 handle_call({'CHECK_BALANCE', Id}, _From, State) ->
-    gen_event:notify(logger, {msg, "CALL CHECK_BALANCE Id: ~p", [Id]}),
+    %gen_event:notify(logger, {msg, "CALL CHECK_BALANCE Id: ~p", [Id]}),
     Reply = bankServerLib:check_balance(Id),
     {reply, Reply, State};
 handle_call({'PUT_MONEY', Id, Money}, _From, State) ->
-    gen_event:notify(logger, {msg, "CALL PUT_MONEY Id: ~p Money: ~p", [Id, Money]}),
+    %gen_event:notify(logger, {msg, "CALL PUT_MONEY Id: ~p Money: ~p", [Id, Money]}),
     Reply = bankServerLib:put_money(Id, Money),
     {reply, Reply, State};
 handle_call({'TRANSFER_MONEY', Id_Src, Id_Dest, Money}, _From, State) ->
-    gen_event:notify(logger, {msg, "CALL TRANSFER_MONEY Id source: ~p Id dest: ~p Money: ~p", [Id_Src, Id_Dest, Money]}),
+    %gen_event:notify(logger, {msg, "CALL TRANSFER_MONEY Id source: ~p Id dest: ~p Money: ~p", [Id_Src, Id_Dest, Money]}),
     Reply = bankServerLib:transfer_money(Id_Src, Id_Dest, Money),
     {reply, Reply, State};
 handle_call({'WITHDRAW_MONEY', Id, Money}, _From, State) ->
-    gen_event:notify(logger, {msg, "CALL WITHDRAW_MONEY Id: ~p Money: ~p", [Id, Money]}),
+    %gen_event:notify(logger, {msg, "CALL WITHDRAW_MONEY Id: ~p Money: ~p", [Id, Money]}),
     Reply = bankServerLib:withdraw_money(Id, Money),
     {reply, Reply, State};
 handle_call(_Request, _From, State) ->

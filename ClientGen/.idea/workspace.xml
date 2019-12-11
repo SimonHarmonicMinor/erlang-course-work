@@ -1,8 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ec13267b-2491-4ea6-a391-d9a66ba7ad70" name="Default Changelist" comment="" />
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <list default="true" id="ec13267b-2491-4ea6-a391-d9a66ba7ad70" name="Default Changelist" comment="Reworked client generator; temporarily removed bank app server logging">
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/OtpErlang.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/OtpErlang.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/ClientProcess.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientGen/ClientProcess.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/ConsoleLogger.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientGen/ConsoleLogger.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/META-INF/ClientGen.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ClientGen/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/icons/MainTab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/icons/OperationsTab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/icons/TransferTab.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/icons/icons8_Copy_48px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/icons/icons8_List_52px.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/icons/icons8_Microphone_48px_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ClientGen/icons/icons8_Waxing_Crescent_64px_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClientProcess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientProcess.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ConsoleLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ConsoleLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Defines.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Defines.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FileLogger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FileLogger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_app/.idea/bank_app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_app/.idea/bank_app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_app/bankServerLib.beam" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_app/bankServerLib.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_app/bank_app.beam" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_app/bank_app.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_app/bank_server.beam" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_app/bank_server.beam" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_app/bank_server.erl" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_app/bank_server.erl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bank_app/general_svisor.erl" beforeDir="false" afterPath="$PROJECT_DIR$/../bank_app/general_svisor.erl" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,28 +45,23 @@
   </component>
   <component name="ProjectId" id="1UZY4s5c6L26Lnb2f4i9KYpZfeU" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="Downloaded.Files.Path.Enabled" value="false" />
     <property name="Repository.Attach.Annotations" value="false" />
     <property name="Repository.Attach.JavaDocs" value="false" />
     <property name="Repository.Attach.Sources" value="false" />
-    <property name="last_opened_file_path" value="D:/Programmy/erl10.4/lib/jinterface-1.10/priv/OtpErlang.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../bank_app" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="RunManager">
     <configuration name="Java Console" type="Application" factoryName="Application">
@@ -58,6 +78,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -84,5 +116,94 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Reworked client generator; temporarily removed bank app server logging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Reworked client generator; temporarily removed bank app server logging" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="395" y="124" width="802" height="684" key="#Project_Structure" timestamp="1575978818159">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="395" y="124" width="802" height="684" key="#Project_Structure/0.25.1600.875@0.25.1600.875" timestamp="1575978818159" />
+    <state x="258" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575978804272">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="258" y="120" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.25.1600.875@0.25.1600.875" timestamp="1575978804272" />
+    <state x="608" y="174" width="376" height="584" key="#com.intellij.ide.util.MemberChooser" timestamp="1576039145313">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="608" y="174" width="376" height="584" key="#com.intellij.ide.util.MemberChooser/0.25.1600.875@0.25.1600.875" timestamp="1576039145313" />
+    <state x="650" y="355" width="292" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576040706994">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="650" y="355" width="292" height="223" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.25.1600.875@0.25.1600.875" timestamp="1576040706994" />
+    <state x="424" y="61" width="744" height="810" key="CommitChangelistDialog2" timestamp="1576067874547">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="424" y="61" width="744" height="810" key="CommitChangelistDialog2/0.25.1600.875@0.25.1600.875" timestamp="1576067874547" />
+    <state x="579" y="224" width="613" height="491" key="FileChooserDialogImpl" timestamp="1575979839235">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="579" y="224" width="613" height="491" key="FileChooserDialogImpl/0.25.1600.875@0.25.1600.875" timestamp="1575979839235" />
+    <state width="1558" height="218" key="GridCell.Tab.0.bottom" timestamp="1576040951857">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state width="1558" height="218" key="GridCell.Tab.0.bottom/0.25.1600.875@0.25.1600.875" timestamp="1576040951857" />
+    <state width="1558" height="218" key="GridCell.Tab.0.center" timestamp="1576040951855">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state width="1558" height="218" key="GridCell.Tab.0.center/0.25.1600.875@0.25.1600.875" timestamp="1576040951855" />
+    <state width="1558" height="218" key="GridCell.Tab.0.left" timestamp="1576040951852">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state width="1558" height="218" key="GridCell.Tab.0.left/0.25.1600.875@0.25.1600.875" timestamp="1576040951852" />
+    <state width="1558" height="218" key="GridCell.Tab.0.right" timestamp="1576040951856">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state width="1558" height="218" key="GridCell.Tab.0.right/0.25.1600.875@0.25.1600.875" timestamp="1576040951856" />
+    <state width="1558" height="271" key="GridCell.Tab.1.bottom" timestamp="1576039478646">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state width="1558" height="271" key="GridCell.Tab.1.bottom/0.25.1600.875@0.25.1600.875" timestamp="1576039478646" />
+    <state width="1558" height="271" key="GridCell.Tab.1.center" timestamp="1576039478645">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state width="1558" height="271" key="GridCell.Tab.1.center/0.25.1600.875@0.25.1600.875" timestamp="1576039478645" />
+    <state width="1558" height="271" key="GridCell.Tab.1.left" timestamp="1576039478645">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state width="1558" height="271" key="GridCell.Tab.1.left/0.25.1600.875@0.25.1600.875" timestamp="1576039478645" />
+    <state width="1558" height="271" key="GridCell.Tab.1.right" timestamp="1576039478645">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state width="1558" height="271" key="GridCell.Tab.1.right/0.25.1600.875@0.25.1600.875" timestamp="1576039478645" />
+    <state x="283" y="40" width="1026" height="852" key="SettingsEditor" timestamp="1576040748463">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="283" y="40" width="1026" height="852" key="SettingsEditor/0.25.1600.875@0.25.1600.875" timestamp="1576040748463" />
+    <state x="490" y="290" key="com.intellij.ide.util.TipDialog" timestamp="1575980450350">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="490" y="290" key="com.intellij.ide.util.TipDialog/0.25.1600.875@0.25.1600.875" timestamp="1575980450350" />
+    <state x="181" y="77" width="1117" height="760" key="new project wizard" timestamp="1575980747430">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="181" y="77" width="1117" height="760" key="new project wizard/0.25.1600.875@0.25.1600.875" timestamp="1575980747430" />
+    <state x="463" y="213" key="search.everywhere.popup" timestamp="1576040199584">
+      <screen x="0" y="25" width="1600" height="875" />
+    </state>
+    <state x="463" y="213" key="search.everywhere.popup/0.25.1600.875@0.25.1600.875" timestamp="1576040199584" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/ClientProcess.java</url>
+          <line>107</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

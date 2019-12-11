@@ -32,68 +32,94 @@ public class ClientProcess {
         rootNode = root;
         remotePeer = peer;
         id = UUID.randomUUID();
-        log.sendMessage("Created process with ID = " + id.toString());
+        log.sendMessage("Created process with UIID = " + id.toString() + "and User ID = " + userNr);
     }
 
     public String getDisplayName() {
         return displayName;
     }
-
     public String showDisplayName() {
         return (displayName != null ? displayName : id.toString());
     }
-
     public void setDisplayName(String displayName) {
         if (displayName != null)
             log.sendMessage(id.toString() + " is " + displayName + " now.");
         this.displayName = displayName;
     }
+
     public void setMaxActions(int maxActions) {
         this.maxActions = maxActions;
     }
 
     private void work() {
-        // TODO: reimplement work method
         for (int i = 0; i < maxActions; i++) {
             int msgCode = random.nextInt(4);
             log.sendMessage("[" + showDisplayName() + "] Sending " + messageTypes[msgCode]);
             try {
+                Thread.sleep(1000 + random.nextInt(2001));
+                OtpErlangObject[] arr = new OtpErlangObject[2];
+                arr[0] = new OtpErlangTuple(new OtpErlangObject[]{
+                        new OtpErlangAtom("bank_server"),
+                        new OtpErlangAtom(Defines.nodeNameTarget + "@" + Defines.hostNameTarget)
+                });
                 switch (msgCode) {
                     case 0: {
-                        connection.sendRPC("bankServerLib", "check_balance", new OtpErlangList(new OtpErlangObject[]{
-                            new OtpErlangInt(userNr)
-                        }));
-
+                        arr[1] = new OtpErlangTuple(new OtpErlangObject[]{
+                                new OtpErlangAtom("CHECK_BALANCE"),
+                                new OtpErlangInt(userNr)
+                        });
+                        break;
                     }
                     case 1: {
-                        connection.sendRPC("bankServerLib", "withdraw_money", new OtpErlangList(new OtpErlangObject[]{
-                                new OtpErlangInt(random.nextInt(1000)),
-                                new OtpErlangFloat((float) (random.nextDouble() * (1000000.0 - 100.0) + 100.0))
-                        }));
+                        int amount = random.nextInt(10000000);
+                        log.sendMessage("[" + showDisplayName() + "] With amount: " + amount);
+                        arr[1] = new OtpErlangTuple(new OtpErlangObject[]{
+                                new OtpErlangAtom("WITHDRAW_MONEY"),
+                                new OtpErlangInt(userNr),
+                                new OtpErlangInt(amount)
+                        });
+                        break;
                     }
                     case 2: {
-                        connection.sendRPC("bankServerLib", "put_money", new OtpErlangList(new OtpErlangObject[]{
-                                new OtpErlangInt(random.nextInt(1000)),
-                                new OtpErlangFloat((float) (random.nextDouble() * (1000000.0 - 100.0) + 100.0))
-                        }));
+                        int amount = random.nextInt(10000000);
+                        log.sendMessage("[" + showDisplayName() + "] With amount: " + amount);
+                        arr[1] = new OtpErlangTuple(new OtpErlangObject[]{
+                                new OtpErlangAtom("PUT_MONEY"),
+                                new OtpErlangInt(userNr),
+                                new OtpErlangInt(amount)
+                        });
+                        break;
                     }
                     case 3: {
-                        connection.sendRPC("bankServerLib", "transfer_money", new OtpErlangList(new OtpErlangObject[]{
-                                new OtpErlangInt(random.nextInt(1000)),
-                                new OtpErlangInt(random.nextInt(1000)),
-                                new OtpErlangFloat((float) (random.nextDouble() * (1000000.0 - 100.0) + 100.0))
-                        }));
+                        int amount = random.nextInt(10000000);
+                        log.sendMessage("[" + showDisplayName() + "] With amount: " + amount);
+                        int targetId = random.nextInt(1000);
+                        log.sendMessage("[" + showDisplayName() + "] With target: " + targetId);
+                        arr[1] = new OtpErlangTuple(new OtpErlangObject[]{
+                                new OtpErlangAtom("TRANSFER_MONEY"),
+                                new OtpErlangInt(userNr),
+                                new OtpErlangInt(targetId),
+                                new OtpErlangInt(amount)
+                        });
+                        break;
                     }
                 }
-                OtpErlangObject response = connection.receiveRPC();
+                connection.sendRPC("gen_server", "call", arr);
+                OtpErlangObject response = connection.receive();
                 if (response instanceof OtpErlangString) {
                     log.sendMessage("[" + showDisplayName() + "] Got " + ((OtpErlangString) response).stringValue());
+                } else if (response instanceof OtpErlangTuple) {
+                    OtpErlangTuple responseTuple = (OtpErlangTuple) response;
+                    if (responseTuple.elements().length >= 2 && responseTuple.elements()[0].equals(Defines.responseTupleHeader)) {
+                        OtpErlangObject responseContent = responseTuple.elements()[1];
+                        log.sendMessage("[" + showDisplayName() + "] Got " + responseContent.toString());
+                    } else {
+                        log.sendMessage("[" + showDisplayName() + "] Got " + response.toString());
+                    }
                 }
-            } catch (IOException exc) {
+            } catch (Exception exc) {
                 exc.printStackTrace();
                 log.sendMessage("Unable to perform request.");
-            } catch (OtpErlangExit | OtpAuthException otpErlangExit) {
-                otpErlangExit.printStackTrace();
             }
         }
         log.sendMessage("[" + showDisplayName() + "] Actions limit exceeded.");
@@ -105,10 +131,13 @@ public class ClientProcess {
             public void run() {
                 mailbox = rootNode.createMbox();
                 try {
-                    self = new OtpSelf(mailbox.getName());
+                    Thread.sleep(random.nextInt(10000));
+                    self = new OtpSelf(id.toString());
                     connection = self.connect(remotePeer);
-                } catch (IOException | OtpAuthException e) {
+                } catch (Exception e) {
                     e.printStackTrace();
+                    log.sendMessage("[" + showDisplayName() + "] Unable to launch client process.");
+                    return;
                 }
                 work();
             }

@@ -2,6 +2,7 @@
   <library name="OtpErlang">
     <CLASSES>
       <root url="jar://D:/Programmy/erl10.4/lib/jinterface-1.10/priv/OtpErlang.jar!/" />
+      <root url="jar:///usr/lib/erlang/lib/jinterface-1.8.1/priv/OtpErlang.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
